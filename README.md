@@ -1,4 +1,5 @@
-# 11forum
+# forum
+A multiple-category forum with demo data
 
 ## Project setup
 ```
