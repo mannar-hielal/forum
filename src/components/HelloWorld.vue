@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1>Welcome to the Forum</h1>
+      <h1 class="mt-4 mb-4">Welcome to the Forum</h1>
       <ThreadList :threads="threads"/>
     </div>
 </template>
