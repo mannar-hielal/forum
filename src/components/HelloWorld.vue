@@ -1,10 +1,12 @@
 <template>
     <div>
+      <!-- Iterating through the threads -->
       <div v-for="(thread, key) in threads"
            :key="key"
            class="col-large push-top">
         <h1>{{ thread.title }}</h1>
 
+        <!-- Iterating through the posts of each thread -->
         <div class="post-list">
           <div v-for="(postId, key) in thread.posts"
               :key="key"
