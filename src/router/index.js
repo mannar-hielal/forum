@@ -1,15 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ThreadShow from '@/components/ThreadShow.vue'
+import HelloWorld from '@/views/HomeView.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/thread/:id',
+    path: '/',
+    name: 'HelloWorld',
+    component: HelloWorld
+  },
+  {
+    path: '/thread',
     name: 'ThreadShow',
-    component: ThreadShow,
-    props: true
+    component: ThreadShow
   },
   {
     path: '/about',
