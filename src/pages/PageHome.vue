@@ -10,7 +10,6 @@ import sourceData from '@/data.json'
 import ThreadList from '@/components/ThreadList.vue'
 
 export default {
-  name: 'HelloWorld',
   components: {
     ThreadList
   },

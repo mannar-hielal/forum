@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import ThreadShow from '@/components/ThreadShow.vue'
-import HelloWorld from '@/views/HomeView.vue'
+import ThreadShow from '@/pages/PageThreadShow.vue'
+import Home from '@/pages/PageHome.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'HelloWorld',
-    component: HelloWorld
+    name: 'Home',
+    component: Home
   },
   {
     path: '/thread/:id',
