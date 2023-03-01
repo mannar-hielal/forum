@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="w-100">
       <h1 class="mt-4 mb-4">Welcome to the Forum</h1>
       <ThreadList :threads="threads"/>
     </div>
