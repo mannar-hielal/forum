@@ -2,52 +2,36 @@
         <!-- Showing one thread -->
         <div>
         <h1>{{ thread.title }}</h1>
-
-        <!-- Iterating through the posts of this specific thread -->
-        <div class="post-list">
-          <div v-for="(postId, key) in thread.posts"
-              :key="key"
-              class="post">
-
-              <div class="user-info">
-                <p></p>
-                <a href="#" class="user-name">{{ users[posts[postId].userId].name}}</a>
-                <a href="#">
-                    <img class="avatar-large" :src="users[posts[postId].userId].avatar" alt="">
-                </a>
-                <p class="desktop-only text-small">107 posts</p>
-              </div>
-
-              <div class="post-content">
-                <div>
-                  <p>{{ posts[postId].text }}</p>
-                </div>
-              </div>
-
-              <div class="post-date text-faded">
-                {{ posts[postId].publishedAt }}
-              </div>
-          </div>
-        </div>
+        <!-- Iterating through the posts of this specific thread-->
+        <PostList :posts="posts"/>
       </div>
 </template>
 
 <script>
 import sourceData from '@/data.json'
+import PostList from '@/components/PostList.vue'
 console.log(sourceData)
+
 export default {
   name: 'ThreadShow',
+  components: {
+    PostList
+  },
   data () {
     return {
-      thread: sourceData.threads[this.id],
-      posts: sourceData.posts,
-      users: sourceData.users
+      thread: sourceData.threads[this.id]
     }
   },
   props: {
     id: {
       required: true,
       type: String
+    }
+  },
+  computed: {
+    posts () {
+      const postIds = Object.values(this.thread.posts)
+      return Object.values(sourceData.posts).filter(post => postIds.includes(post['.key']))
     }
   }
 }
