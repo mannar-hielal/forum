@@ -12,9 +12,10 @@ const routes = [
     component: HelloWorld
   },
   {
-    path: '/thread',
+    path: '/thread/:id',
     name: 'ThreadShow',
-    component: ThreadShow
+    component: ThreadShow,
+    props: true
   },
   {
     path: '/about',
