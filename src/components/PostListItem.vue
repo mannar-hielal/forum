@@ -2,11 +2,11 @@
   <div class="post">
     <div class="user-info">
       <p></p>
-      <a href="#" class="user-name">{{ users[post.userId].name}}</a>
+      <a href="#" class="user-name">{{ user.name}}</a>
       <a href="#">
-          <img class="avatar-large" :src=" users[post.userId].avatar" alt="">
+          <img class="avatar-large" :src="user.avatar" alt="">
       </a>
-      <p class="desktop-only text-small">177 posts</p>
+      <p class="desktop-only text-small">{{ userPostsCount }} posts</p>
     </div>
 
     <div class="post-content">
@@ -34,6 +34,14 @@ export default {
     post: {
       required: true,
       type: Object
+    }
+  },
+  computed: {
+    user () {
+      return this.users[this.post.userId]
+    },
+    userPostsCount () {
+      return Object.values(this.user.posts).length
     }
   }
 }
