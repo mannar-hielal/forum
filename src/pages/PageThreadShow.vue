@@ -3,7 +3,7 @@
         <div>
         <h1>{{ thread.title }}</h1>
         <p>
-            By <a href="#" class="link-unstyled">Robin</a>,
+            By <a href="#" class="link-unstyled">{{ user.name }}</a>,
             <AppDate
             :timestamp="thread.publishedAt"/>
             <span style="float:right; margin-top: 2px;" class="hide-mobile text-faded text-small">3 replies by 3 contributors</span>
@@ -45,6 +45,9 @@ export default {
     posts () {
       const postIds = Object.values(this.thread.posts)
       return Object.values(sourceData.posts).filter(post => postIds.includes(post['.key']))
+    },
+    user () {
+      return this.users[this.thread.userId]
     }
   },
   methods: {
