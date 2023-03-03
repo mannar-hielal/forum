@@ -16,15 +16,22 @@
     </div>
 
     <div class="post-date text-faded">
-      {{post.publishedAt | humanFriendlyDate }}
+      <AppDate
+      :timestamp="post.publishedAt"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import sourceData from '@/data.json'
+import AppDate from './AppDate.vue'
+
 export default {
   name: 'PostListItem',
+  components: {
+    AppDate
+  },
   data () {
     return {
       users: sourceData.users
@@ -42,13 +49,6 @@ export default {
     },
     userPostsCount () {
       return Object.values(this.user.posts).length
-    }
-  },
-  filters: {
-    humanFriendlyDate (dateInMilliseconds) {
-      const day = new Date(dateInMilliseconds).toString().slice(0, 3)
-      const date = new Date(dateInMilliseconds).toLocaleString('en-GB', { timeZone: 'Europe/Zurich' })
-      return `${day} ${date}`
     }
   }
 }
