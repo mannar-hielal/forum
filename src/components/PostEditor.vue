@@ -32,7 +32,7 @@ export default {
       const postId = `newPost${Math.random()}`
       const post = {
         '.key': postId,
-        publishedAt: Math.floor(Date.now() / 1000),
+        publishedAt: Math.floor(Date.now()),
         text: this.postText,
         threadId: this.threadId,
         userId: 'FsCDAk9w8NeXEceLV87arpsXjnQ2'
