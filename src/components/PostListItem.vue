@@ -25,13 +25,9 @@
 
 <script>
 import sourceData from '@/data.json'
-import AppDate from './AppDate.vue'
 
 export default {
   name: 'PostListItem',
-  components: {
-    AppDate
-  },
   data () {
     return {
       users: sourceData.users

@@ -37,13 +37,9 @@
 
 <script>
 import sourceData from '@/data.json'
-import AppDate from './AppDate.vue'
 
 export default {
   name: 'ThreadListItem',
-  components: {
-    AppDate
-  },
   data () {
     return {
       users: sourceData.users
