@@ -28,7 +28,9 @@ Why Vue.js?</br>
 - With Vue.js v2 I didn't have to learn TypeScript first (TypeScript can be used, but it is not a prerequisite).</br></br>
 
 ### Vue Components
-I nested the components (parent/children) and passed data between them using <code>props</code>, <code>slots</code> and <code>emit</code>. i.e <code>ThreadList.vue</code> and <code>ThreadListItem.vue </code></br></br>
+I nested the components (parent/children) and passed data between them using:
+- Props: as in <code>ThreadList.vue</code> and <code>ThreadListItem.vue </code>
+- Emiting custom events: as in <code>PostEditor</code> and <code>PageThreadShow</code></br></br>
 
 ### Lifecycle Hooks
 Since they allow us to add our own code at specific stages of the vue instance, I used the <code>created</code> hook. It's the ideal place to fetch data or make AJAX call before the template is rendered in the DOM.</br></br>
