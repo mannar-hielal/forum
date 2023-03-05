@@ -1,15 +1,15 @@
 # The Forum
 
 This App is a multiple-category forum with dummy data, where a user can start a thread in a certain forum and other users can add replies to this thread. </br>
-There are different forums that contain users threads, also the forums themselves are categorized (each category contains many forums).
-
+Threads are grouped in a forum (i.e Jokes Forum which contains many jokes threads), also the forums themselves are grouped in a category (i.e Comedy category which has Jokes Forum and Memes Forum).
 ## Demo
 [Vuejs Forum](https://forum-vuejs2.herokuapp.com/).
 
 ![](/forum-screenshot.jpg)
 
 ## Features
-- Users can open a thread.
+- Forums are categorized under categories (multi-category forum).
+- Users can open threads.
 - Users can add a reply to a thread, edit it or delete it.
 - Navigating the forum without reloading the page.</br></br>
 ## Tech stack & dependencies
