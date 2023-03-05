@@ -31,13 +31,11 @@
 </template>
 
 <script>
-import sourceData from '@/data.json'
-
 export default {
   name: 'ForumListItem',
   data () {
     return {
-      users: sourceData.users
+      users: this.$store.state.users
     }
   },
   props: {

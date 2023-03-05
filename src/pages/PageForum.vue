@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import sourceData from '@/data.json'
 import ThreadList from '@/components/ThreadList.vue'
 
 export default {
@@ -29,9 +28,7 @@ export default {
     ThreadList
   },
   data () {
-    return {
-      forum: sourceData.forums[this.id]
-    }
+    return {}
   },
   props: {
     id: {
@@ -40,9 +37,12 @@ export default {
     }
   },
   computed: {
+    forum () {
+      return this.$store.state.forums[this.id]
+    },
     threads () {
       const forumIds = Object.values(this.forum.threads)
-      return Object.values(sourceData.threads).filter(thread => forumIds.includes(thread['.key']))
+      return Object.values(this.$store.state.threads).filter(thread => forumIds.includes(thread['.key']))
     }
   }
 }

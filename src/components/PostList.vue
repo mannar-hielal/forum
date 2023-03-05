@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import sourceData from '@/data.json'
 import PostListItem from '@/components/PostListItem.vue'
 
 export default {
@@ -18,7 +17,7 @@ export default {
   },
   data () {
     return {
-      users: sourceData.users
+      users: this.$store.state.users
     }
   },
   props: {

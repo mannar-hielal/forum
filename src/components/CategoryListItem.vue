@@ -18,7 +18,6 @@
 
 <script>
 import ForumList from './ForumList.vue'
-import sourceData from '@/data.json'
 
 export default {
   name: 'CategoryListItem',
@@ -38,7 +37,7 @@ export default {
   computed: {
     forums () {
       const forumIds = Object.values(this.category.forums)
-      return Object.values(sourceData.forums).filter(forum => forumIds.includes(forum['.key']))
+      return Object.values(this.$store.state.forums).filter(forum => forumIds.includes(forum['.key']))
     }
   }
 }
