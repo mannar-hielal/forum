@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/pages/PageHome.vue'
+import Category from '@/pages/PageCategory.vue'
 import Forum from '@/pages/PageForum.vue'
 import ThreadShow from '@/pages/PageThreadShow.vue'
 import NotFound from '@/pages/PageNotFound'
@@ -23,6 +24,12 @@ const routes = [
     path: '/forum/:id',
     name: 'Forum',
     component: Forum,
+    props: true
+  },
+  {
+    path: '/category/:id',
+    name: 'Category',
+    component: Category,
     props: true
   },
   {
