@@ -1,7 +1,7 @@
 <template>
   <div class="forum-listing">
       <div class="forum-details">
-          <router-link
+          <router-link v-if= "threadCount > 0"
             :to="{
               name: 'Forum',
               params: { id: forum['.key'] },
@@ -9,6 +9,9 @@
             class="text-xlarge"
           >{{ forum.name }}
           </router-link>
+          <p v-else class="text-xlarge">
+            {{ forum.name }}
+          </p>
           <p>{{ forum.description }}</p>
       </div>
 
