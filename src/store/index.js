@@ -8,9 +8,31 @@ export default new Vuex.Store({
   state: sourceDate,
   getters: {
   },
-  mutations: {
-  },
   actions: {
+    createPost (context, post) {
+      const postId = `newPost${Math.random()}`
+      post['.key'] = postId
+      context.commit('setPost', { post, postId })
+      context.commit('appendPostToThreads', { threadId: post.threadId, postId })
+      context.commit('appendPostToUser', { postId, userId: post.userId })
+    }
+  },
+  mutations: {
+    // set post to posts array
+    setPost (state, { post, postId }) {
+      // this.$set(object, propertyName, value to add to the propertyName)
+      Vue.set(state.posts, postId, post)
+    },
+    // set post to threads array
+    appendPostToThreads (state, { threadId, postId }) {
+      const thread = state.threads[threadId]
+      Vue.set(thread.posts, postId, postId)
+    },
+    // set post to users.posts
+    appendPostToUser (state, { postId, userId }) {
+      const user = state.users[userId]
+      Vue.set(user.posts, postId, postId)
+    }
   },
   modules: {
   }

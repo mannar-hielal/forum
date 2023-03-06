@@ -12,7 +12,6 @@
         <PostList :posts="posts"/>
         <PostEditor
         :threadId= id
-        @save="addPost"
         />
       </div>
 </template>
@@ -46,17 +45,6 @@ export default {
     },
     user () {
       return this.users[this.thread.userId]
-    }
-  },
-  methods: {
-    addPost ({ post }) {
-      const postId = post['.key']
-      // adding the new post to posts, thread.post and
-      // in the users.posts array
-      // using the Vue.set to make them reactive
-      this.$set(this.$store.state.posts, postId, post)
-      this.$set(this.thread.posts, postId, postId)
-      this.$set(this.users[post.userId].posts, postId, postId)
     }
   }
 }
