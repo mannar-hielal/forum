@@ -11,9 +11,9 @@
     <ul>
       <li class="navbar-user">
           <a href="#">
-              <img class="avatar-small" src="../assets/img/jpg/mannar-hielal-400X400.jpg" alt="">
+              <img class="avatar-small" :src="require(`../assets/img/jpg/${authUser.avatar}`)" :alt="authUser.name">
               <span>
-                  Mannar Hielal
+                  {{ authUser.name }}
                   <img src="../assets/img/svg/arrow-profile.svg">
               </span>
           </a>
@@ -23,4 +23,15 @@
 </header>
 </template>
 <script>
+import { mapGetters } from 'vuex'
+export default {
+  data () {
+    return {}
+  },
+  computed: {
+    ...mapGetters({
+      authUser: 'authUser'
+    })
+  }
+}
 </script>

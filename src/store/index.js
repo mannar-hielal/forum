@@ -5,8 +5,14 @@ import sourceDate from '@/data.json'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: sourceDate,
+  state: {
+    ...sourceDate,
+    authUserId: '38St7Q8Zi2NSJIPa5ahzssq9kbyp1'
+  },
   getters: {
+    authUser (state) {
+      return state.users[state.authUserId]
+    }
   },
   actions: {
     createPost (context, post) {
