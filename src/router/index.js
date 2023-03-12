@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '@/pages/PageHome.vue'
 import Category from '@/pages/PageCategory.vue'
 import Forum from '@/pages/PageForum.vue'
+import Profile from '@/pages/PageProfile.vue'
 import ThreadShow from '@/pages/PageThreadShow.vue'
 import NotFound from '@/pages/PageNotFound'
 
@@ -31,6 +32,11 @@ const routes = [
     name: 'Category',
     component: Category,
     props: true
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile
   },
   {
     path: '*',

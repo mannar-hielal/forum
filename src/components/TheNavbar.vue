@@ -10,13 +10,13 @@
   <nav class="navbar">
     <ul>
       <li class="navbar-user">
-          <a href="#">
-              <img class="avatar-small" :src="require(`../assets/img/jpg/${authUser.avatar}`)" :alt="authUser.name">
+        <router-link :to="{name: 'Profile'}">
+          <img class="avatar-small" :src="authUser.avatar" :alt="authUser.name">
               <span>
                   {{ authUser.name }}
                   <img src="../assets/img/svg/arrow-profile.svg">
               </span>
-          </a>
+        </router-link>
       </li>
     </ul>
   </nav>
