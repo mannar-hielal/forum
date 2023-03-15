@@ -43,7 +43,7 @@
 
         <div class="btn-group space-between">
             <button class="btn-ghost">Cancel</button>
-            <button type="submit" class="btn-blue">Save</button>
+            <button @click.prevent="save" type="submit" class="btn-blue">Save</button>
         </div>
     </div>
 
@@ -72,6 +72,12 @@ export default {
     userThreadsCount: {
       required: true,
       type: Number
+    }
+  },
+  methods: {
+    // using vue.set bind activeUser to user in the state ( in mutations: Vue.set(state.users, userId, user)) to fix this, we send a clone of a activeUser each time we do a change.
+    save () {
+      this.$store.dispatch('updateUser', { ...this.activeUser })
     }
   }
 }
