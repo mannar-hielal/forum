@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import { countObjectProperties } from '@/helpers'
 export default {
   name: 'ForumListItem',
   data () {
@@ -46,7 +47,7 @@ export default {
   },
   computed: {
     threadCount () {
-      return this.forum.threads ? Object.values(this.forum.threads).length : 0
+      return countObjectProperties(this.forum.threads)
     }
   }
 }

@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { countObjectProperties } from '@/helpers'
 export default {
   name: 'PostListItem',
   data () {
@@ -42,7 +43,7 @@ export default {
       return this.users[this.post.userId]
     },
     userPostsCount () {
-      return Object.values(this.user.posts).length
+      return countObjectProperties(this.user.posts)
     }
   }
 }
