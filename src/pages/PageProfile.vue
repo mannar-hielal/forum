@@ -1,11 +1,19 @@
 <template>
   <div>
     <div class="flex-grid">
-      <UserProfileCard
+      <!--left side: profile & profile editor-->
+      <!--<UserProfileCard
+        :user="user"
+        :userPostsCount="userPostsCount"
+        :userThreadsCount="userThreadsCount"
+      />-->
+
+      <UserProfileCardEditor
         :user="user"
         :userPostsCount="userPostsCount"
         :userThreadsCount="userThreadsCount"
       />
+      <!--right side: posts-->
       <div class="col-7 push-top">
           <div class="profile-header">
               <span class="text-lead">
@@ -17,20 +25,23 @@
           <!--PostList display array of posts, so we pass it posts-->
           <PostList :posts="userPosts"/>
       </div>
-      </div>
+    </div>
   </div>
 </template>
 <script>
 import { mapGetters } from 'vuex'
 import PostList from '@/components/PostList.vue'
-import UserProfileCard from '@/components/UserProfileCard.vue'
+// import UserProfileCard from '@/components/UserProfileCard.vue'
+import UserProfileCardEditor from '@/components/UserProfileCardEditor.vue'
+
 import { countObjectProperties } from '@/helpers/index'
 
 export default {
   name: 'Profile',
   components: {
     PostList,
-    UserProfileCard
+    // UserProfileCard,
+    UserProfileCardEditor
   },
   data () {
     return {}
