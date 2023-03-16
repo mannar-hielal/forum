@@ -1,11 +1,10 @@
 <template>
   <div class="post">
     <div class="user-info">
-      <p></p>
-      <a href="#" class="user-name">{{ user.name}}</a>
-      <a href="#">
-          <img class="avatar-large" :src="user.avatar" alt="">
-      </a>
+      <router-link :to="{name: 'Profile'}">
+        <p class="user-name">{{ user.name}}</p>
+        <img class="avatar-large d-block" :src="user.avatar" :alt="user.username">
+      </router-link>
       <p class="desktop-only text-small">{{ userPostsCount }} posts</p>
     </div>
 
