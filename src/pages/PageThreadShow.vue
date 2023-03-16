@@ -27,10 +27,7 @@ export default {
     PostEditor
   },
   data () {
-    return {
-      thread: this.$store.state.threads[this.id],
-      users: this.$store.state.users
-    }
+    return {}
   },
   props: {
     id: {
@@ -44,7 +41,10 @@ export default {
       return Object.values(this.$store.state.posts).filter(post => postIds.includes(post['.key']))
     },
     user () {
-      return this.users[this.thread.userId]
+      return this.$store.state.users[this.thread.userId]
+    },
+    thread () {
+      return this.$store.state.threads[this.id]
     }
   }
 }
