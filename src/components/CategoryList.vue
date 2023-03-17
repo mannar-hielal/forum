@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="category-list">
     <CategoryListItem v-for="category in categories"
     :category="category"
     :key="category['.key']"/>
