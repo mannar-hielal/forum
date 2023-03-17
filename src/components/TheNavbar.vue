@@ -18,7 +18,11 @@
     <div class="collapse navbar-collapse justify-content-md-end" id="navbarsExample08">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <router-link
+            :to="{ name: 'Home'}"
+            class="nav-link">
+            Home
+          </router-link>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
@@ -41,7 +45,12 @@
                 </span>
           </router-link>
           <div class="dropdown-menu" aria-labelledby="dropdown08">
-            <a class="dropdown-item" href="#">Something else here</a>
+            <router-link
+              :to="{name: 'Profile'}"
+              class="dropdown-item"
+              >
+            Profile
+          </router-link>
           </div>
         </li>
       </ul>
