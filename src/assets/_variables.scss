@@ -1,7 +1,28 @@
 // My Theme Colors
-$petrol: rgba(21, 20, 20, 1); // #151414;
-$aqua: rgba(0, 210, 255, 1); // #00d2ff;
-$purple: rgba(58, 71, 213, 1); // #3a47d5;
+$petrol:        #151414;
+$aqua:          #00d2ff;
+$purple:        #3a47d5;
+$blue:          #0d6efd;
+
+$green:         hsl(137, 37%, 58%);
+$darkGreen:     hsl(137, 37%, 40%);
+$xdarkGreen:    hsl(137, 37%, 10%);
+
+$yellow:        hsl(46, 98%, 83%);
+$darkYellow:    hsl(46, 98%, 40%);
+$xdarkYellow:   hsl(46, 98%, 25%);
+
+$orange:        hsl(26, 86%, 63%);
+$darkOrange:    hsl(26, 86%, 40%);
+$xdarkOrange:   hsl(26, 86%, 25%);
+
+$red:           hsl(14, 81%, 64%);
+$darkRed:       hsl(14, 81%, 35%);
+$xdarkRed:      hsl(14, 81%, 15%);
+
+$pink:          hsl(1, 76%, 71%);
+$darkPink:      hsl(1, 76%, 45%);
+$xdarkPink:     hsl(1, 76%, 25%);
 
 // overwrite primary, secondary
 //$primary:       $petrol;

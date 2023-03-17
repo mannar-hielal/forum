@@ -1,0 +1,28 @@
+.bg--gradient-1 {
+    @include gradient($xdarkGreen, $darkGreen, $darkGreen, $green);
+}
+
+.bg--gradient-2 {
+    @include gradient($xdarkYellow, $darkYellow, $darkYellow, $yellow);
+}
+
+.bg--gradient-3 {
+    @include gradient($xdarkOrange, $darkOrange, $darkOrange, $orange);
+}
+
+.bg--gradient-4 {
+    @include gradient($xdarkRed, $darkRed, $darkRed, $red);
+}
+
+.bg--gradient-5 {
+    @include gradient($xdarkPink, $darkPink, $darkPink, $pink);
+}
+
+.rounded--bottom {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+a {
+    text-decoration: none;
+  }

@@ -1,0 +1,4 @@
+
+@mixin gradient($c1,$c2,$c3,$c4) {
+    background-image: linear-gradient(to top right, $c1 0%, $c2 33.33%, $c3 66.66%, $c4 100%);
+}
