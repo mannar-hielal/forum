@@ -61,7 +61,9 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
+// import if you want to use mixins
+// @import '@/assets/styles.scss';
 img {
   height: 30px;
   width: 30px;

@@ -1,0 +1,40 @@
+// My Theme Colors
+$petrol: rgba(21, 20, 20, 1); // #151414;
+$aqua: rgba(0, 210, 255, 1); // #00d2ff;
+$purple: rgba(58, 71, 213, 1); // #3a47d5;
+
+// overwrite primary, secondary
+//$primary:       $petrol;
+$secondary:     $purple;
+
+// Import google font
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@300;400&display=swap');
+
+// Override headings font-family
+$headings-font-family:        'Poppins', sans-serif;
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer * .75,
+  4: $spacer,
+  5: $spacer * 1.25,
+  6: $spacer * 1.5,
+  7: $spacer * 1.75,
+  8: $spacer * 2,
+  9: $spacer * 2.25,
+  10: $spacer * 2.5,
+  11: $spacer * 2.75,
+  12: $spacer * 3,
+  13: $spacer * 3.25,
+  14: $spacer * 3.5,
+  15: $spacer * 3.75,
+  16: $spacer * 4,
+  24: $spacer * 6,
+);
+
+
+// Import bootstrap 5 (keep it down)
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
