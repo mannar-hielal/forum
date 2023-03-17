@@ -1,8 +1,8 @@
 <template>
-    <div class="w-100">
-      <h1 class="mt-4 mb-4">Welcome to the Forum</h1>
+    <section>
+      <h1 class="mb-12">Welcome to the Forum</h1>
       <CategoryList :categories="categories"/>
-    </div>
+    </section>
 </template>
 
 <script>

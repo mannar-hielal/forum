@@ -5,9 +5,9 @@
       <router-link to="/about">About</router-link>
     </nav>-->
     <TheNavbar/>
-    <div class="container">
+    <main class="container">
       <router-view/>
-    </div>
+    </main>
   </div>
 </template>
 <script>
