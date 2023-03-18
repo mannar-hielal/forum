@@ -1,6 +1,6 @@
 <template>
   <!-- Display the category name-->
-  <div class="category-list-item mb-12 bg-light rounded--bottom">
+  <div class="category-list-item mb-12 bg-light rounded--bottom overflow-hidden">
     <h2 :class="`category-title p-4 h5 rounded--bottom m-0 bg--gradient-${index}`">
       <router-link
         :to="{
@@ -11,7 +11,7 @@
       >{{ category.name }}
       </router-link>
     </h2>
-    <div class="category-body p-4 rounded--bottom">
+    <div class="category-body rounded--bottom">
       <!-- Iterating through the forums of this category-->
       <ForumList :forums="forums"/>
     </div>

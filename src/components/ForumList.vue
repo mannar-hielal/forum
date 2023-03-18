@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="forum-list">
     <ForumListItem v-for="forum in forums"
     :forum="forum"
     :key="forum['.key']"/>
