@@ -7,7 +7,9 @@
               :to="{name: 'Profile'}"
               class="d-flex flex-column align-items-center mb-4">
                 <p class="user-name">{{ user.name}}</p>
-                <img class="img-fluid rounded--image" :src="user.avatar" :alt="user.username">
+                <div class="rounded--image">
+                  <img class="img-fluid" :src="user.avatar" :alt="user.username">
+                </div>
               </router-link>
               <p class="text-center">{{ userPostsCount }} posts</p>
           </div>
