@@ -1,5 +1,5 @@
 <template>
-  <div class="forum-list-item">
+  <div class="forum-list-item stripes">
       <div class="row p-4">
         <div class="forum-details col-6">
             <h3 class="h6">

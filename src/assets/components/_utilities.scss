@@ -1,3 +1,7 @@
+.bg--gradient-0 {
+    @include gradient($xdarkPetrol, $darkPetrol, $darkPetrol, $petrol);
+}
+
 .bg--gradient-1 {
     @include gradient($xdarkGreen, $darkGreen, $darkGreen, $green);
 }
@@ -21,8 +25,15 @@
 .rounded--bottom {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    overflow: hidden;
 }
 
 a {
     text-decoration: none;
-  }
+}
+
+.stripes {
+    &:nth-child(even) {
+        background-color: $gray-200;
+    }
+}

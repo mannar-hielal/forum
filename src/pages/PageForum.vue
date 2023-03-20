@@ -1,21 +1,17 @@
 <template>
       <!-- Display one forum details  -->
-      <div class="w-100">
-      <div class="col-full push-top">
-        <div class="forum-header">
-            <div class="forum-details">
-                <h1>{{ forum.name }}</h1>
-                <p class="text-lead">{{ forum.description }}</p>
-            </div>
-            <a href="new-thread.html" class="btn-green btn-small">Start a thread</a>
+      <div class="forum">
+        <header class="forum-header">
+          <h1>{{ forum.name }}</h1>
+          <p>{{ forum.description }}</p>
+        </header>
+        <div class="d-flex justify-content-end mb-4">
+          <a href="new-thread.html" class="btn btn-primary">Start a thread</a>
         </div>
-      </div>
-      <!-- Iterating through the collection of threads of this forum-->
-      <div class="col-full">
-          <ThreadList
-          :threads="threads"
-          />
-      </div>
+
+        <!-- Iterating through the collection of threads of this forum-->
+        <ThreadList
+        :threads="threads"/>
   </div>
 </template>
 

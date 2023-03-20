@@ -1,8 +1,8 @@
 <template>
-  <div class="thread">
-      <div>
+  <div class="thread-list-item stripes">
+    <div class="row p-4">
+      <div class="thread-details col-6">
           <p>
-
               <router-link
                 :to="{
                   name: 'ThreadShow',
@@ -11,14 +11,14 @@
               >{{ thread.title }}</router-link>
 
           </p>
-          <p class="text-faded text-xsmall">
+          <small class="text-muted m-0">
               By <a href="#">{{ user.name }}</a> ,
               <AppDate
               :timestamp="thread.publishedAt"/>
-          </p>
+          </small>
       </div>
 
-      <div class="activity">
+      <div class="thread-activity col-6">
           <p class="replies-count">
               {{ repliesCount }} reply
           </p>
@@ -32,6 +32,7 @@
               <p class="text-xsmall text-faded">2 hours ago</p>
           </div>-->
       </div>
+    </div>
   </div>
 </template>
 

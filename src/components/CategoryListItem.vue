@@ -1,6 +1,6 @@
 <template>
   <!-- Display the category name-->
-  <div class="category-list-item mb-12 bg-light rounded--bottom overflow-hidden">
+  <div class="category-list-item mb-12 bg-light rounded--bottom">
     <h2 :class="`category-title p-4 h5 rounded--bottom m-0 bg--gradient-${index}`">
       <router-link
         :to="{
