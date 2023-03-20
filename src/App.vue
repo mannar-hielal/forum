@@ -6,6 +6,8 @@
     </nav>-->
     <TheNavbar/>
     <main class="container">
+      <div class="alert alert-danger text-center" role="alert">
+        This website is still under development</div>
       <router-view/>
     </main>
   </div>
