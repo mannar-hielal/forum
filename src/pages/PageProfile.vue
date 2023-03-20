@@ -1,32 +1,30 @@
 <template>
-  <div>
-    <div class="flex-grid">
-      <!--left side: profile & profile editor-->
-      <UserProfileCard
-        v-if="!edit"
-        :user="user"
-        :userPostsCount="userPostsCount"
-        :userThreadsCount="userThreadsCount"
-      />
+  <div class="row">
+    <!--left side: profile & profile editor-->
+    <UserProfileCard
+      v-if="!edit"
+      :user="user"
+      :userPostsCount="userPostsCount"
+      :userThreadsCount="userThreadsCount"
+    />
 
-      <UserProfileCardEditor
-        v-else
-        :user="user"
-        :userPostsCount="userPostsCount"
-        :userThreadsCount="userThreadsCount"
-      />
-      <!--right side: posts-->
-      <div class="col-7 push-top">
-          <div class="profile-header">
-              <span class="text-lead">
-                  {{ user.username }}'s recent activity
-              </span>
-              <a href="#">See only started threads?</a>
-          </div>
-          <hr>
-          <!--PostList display array of posts, so we pass it posts-->
-          <PostList :posts="userPosts"/>
-      </div>
+    <UserProfileCardEditor
+      v-else
+      :user="user"
+      :userPostsCount="userPostsCount"
+      :userThreadsCount="userThreadsCount"
+    />
+    <!--right side: posts-->
+    <div class="col-12 col-md-8">
+        <header class="profile-header d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <h1 class="h3 mb-0">
+                {{ user.username }}'s recent activity
+            </h1>
+            <a href="#">See only started threads?</a>
+        </header>
+        <hr>
+        <!--PostList display array of posts, so we pass it posts-->
+        <PostList :posts="userPosts"/>
     </div>
   </div>
 </template>

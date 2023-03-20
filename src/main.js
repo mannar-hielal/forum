@@ -13,9 +13,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
 import { faFaceSmile } from '@fortawesome/free-regular-svg-icons'
+import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add(faFaceSmile)
+library.add(faFaceSmile, faGlobe)
 
 Vue.config.productionTip = false
 Vue.component('AppDate', AppDate)

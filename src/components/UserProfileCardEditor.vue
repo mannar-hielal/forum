@@ -1,5 +1,5 @@
 <template>
-  <div class="col-3 push-top">
+  <div class="col-12 col-md-4">
     <div class="profile-card">
 
         <p class="text-center">

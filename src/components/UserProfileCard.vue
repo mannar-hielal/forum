@@ -1,37 +1,34 @@
 <template>
-  <div class="col-3 push-top">
-    <div class="profile-card">
-        <p class="text-center">
-            <img :src="user.avatar"  :alt="user.name" class="avatar-xlarge">
-        </p>
+  <div class="col-12 col-md-4 mb-12 mb-m-0">
+    <div class="profile-card mb-6 shadow-sm p-8 bg-light text-center">
+      <img :src="user.avatar"  :alt="user.name" class="img-fluid mb-4">
+      <h2>{{ user.username }}</h2>
 
-        <h1 class="title">{{ user.username }}</h1>
+      <p>{{ user.name }}</p>
 
-        <p class="text-lead">{{ user.name }}</p>
+      <p v-if="user.bio"> {{ user.bio }} </p>
+      <p v-else> No bio specified.</p>
 
-        <p v-if="user.bio" class="text-justify">
-            {{ user.bio }}
-        </p>
-        <p v-else>
-          No bio specified.
-        </p>
-
-        <span class="online">{{ user.username }} is online</span>
-        <div class="stats">
-            <span>{{ userPostsCount }} posts</span>
+      <p>{{ user.username }} is online</p>
+        <div>
+            <span>{{ userPostsCount }} posts | </span>
             <span>{{ userThreadsCount }} threads</span>
         </div>
         <hr>
-        <p v-if="user.website" class="text-large text-center"><i class="fa fa-globe"></i> <a :href="user.website">{{ user.website }}</a></p>
+
+        <p v-if="user.website">
+          <font-awesome-icon  class="pe-2" :icon="['fas', 'globe']"/>
+          <a :href="user.website">{{ user.website }}</a>
+        </p>
     </div>
 
-    <p class="text-xsmall text-faded text-center">Member since june 2003, last visited 4 hours ago</p>
+    <p>Member since june 2003, last visited 4 hours ago</p>
 
     <div class="text-center">
       <hr>
       <router-link
       :to="{name: 'ProfileEdit', props: {edit: true}}"
-      class="btn-green btn-small"
+      class="btn btn-primary"
       >Edit Profile</router-link>
     </div>
   </div>
@@ -57,3 +54,9 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.profile-card img {
+  width: 300px;
+  border-radius: 50%;
+}
+</style>
