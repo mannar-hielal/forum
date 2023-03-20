@@ -1,9 +1,9 @@
 <template>
   <div class="post-list">
-    <div v-for="post in posts"
-        :key="post['.key']">
-      <PostListItem :post="post"/>
-    </div>
+      <PostListItem
+      v-for="post in posts"
+      :post="post"
+      :key="post['.key']"/>
   </div>
 </template>
 

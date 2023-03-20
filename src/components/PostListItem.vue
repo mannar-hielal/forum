@@ -1,23 +1,45 @@
 <template>
-  <div class="post">
-    <div class="user-info">
-      <router-link :to="{name: 'Profile'}">
-        <p class="user-name">{{ user.name}}</p>
-        <img class="avatar-large d-block" :src="user.avatar" :alt="user.username">
-      </router-link>
-      <p class="desktop-only text-small">{{ userPostsCount }} posts</p>
-    </div>
+  <div class="post mb-6 shadow-sm p-8 bg-light">
+    <div class="row">
+      <div class="user-info col-4 col-md-2">
+          <div class="d-flex flex-column align-items-center">
+            <router-link
+              :to="{name: 'Profile'}">
+                <p class="user-name">{{ user.name}}</p>
+                <img class="img-fluid rounded--image" :src="user.avatar" :alt="user.username">
+              </router-link>
+              <small class="text-muted d-block">{{ userPostsCount }} posts</small>
+          </div>
+      </div>
 
-    <div class="post-content">
-      <div>
-        <p>{{post.text }}</p>
+      <div class="post-content col-8 col-md-10">
+          <p>{{post.text }}</p>
       </div>
     </div>
 
-    <div class="post-date text-faded">
-      <AppDate
-      :timestamp="post.publishedAt"
-      />
+    <div class="row align-items-end">
+      <div class="col-6 post-date text-faded">
+        <AppDate
+        :timestamp="post.publishedAt"
+        />
+      </div>
+
+      <div class="col-6 reactions">
+        <div>
+          <ul class="d-flex justify-content-end mb-2">
+            <li>💡</li>
+            <li>❤️</li>
+            <li>👎</li>
+            <li>👍</li>
+            <li>👌</li>
+          </ul>
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-md"><span class="emoji">❤️</span>️ 3</button>
+            <button class="btn btn-md active-reaction"><span class="emoji">👌️</span>️ 1</button>
+            <button class="btn btn-md">+ <i class="fa fa-smile-o emoji"></i></button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -47,3 +69,9 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.reactions ul li {
+  font-size: 1.5rem;
+  padding-left: 0.5rem;
+}
+</style>

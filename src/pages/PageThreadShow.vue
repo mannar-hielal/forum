@@ -1,18 +1,22 @@
 <template>
         <!-- Showing one thread -->
         <div>
-        <h1>{{ thread.title }}</h1>
-        <p>
-            By <a href="#" class="link-unstyled">{{ user.name }}</a>,
-            <AppDate
-            :timestamp="thread.publishedAt"/>
-            <span style="float:right; margin-top: 2px;" class="hide-mobile text-faded text-small">3 replies by 3 contributors</span>
-          </p>
-        <!-- Iterating through the posts of this specific thread-->
-        <PostList :posts="posts"/>
-        <PostEditor
-        :threadId= id
-        />
+          <header class="mb-12">
+            <h1>{{ thread.title }}</h1>
+            <div class="d-flex justify-content-between">
+              <small>
+                  By <a href="#" class="text-muted">{{ user.name }}</a>,
+                  <AppDate
+                  :timestamp="thread.publishedAt"/>
+              </small>
+              <span>3 replies by 3 contributors</span>
+            </div>
+          </header>
+          <!-- Iterating through the posts of this specific thread-->
+          <PostList :posts="posts"/>
+          <PostEditor
+          :threadId= id
+          />
       </div>
 </template>
 

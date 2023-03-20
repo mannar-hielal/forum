@@ -1,5 +1,5 @@
 <template>
-  <span> {{timestamp | humanFriendlyDate }}</span>
+  <small> {{timestamp | humanFriendlyDate }}</small>
 </template>
 
 <script>
