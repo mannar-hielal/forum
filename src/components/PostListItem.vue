@@ -2,13 +2,14 @@
   <div class="post mb-6 shadow-sm p-8 bg-light">
     <div class="row">
       <div class="user-info col-4 col-md-2">
-          <div class="d-flex flex-column align-items-center">
+          <div>
             <router-link
-              :to="{name: 'Profile'}">
+              :to="{name: 'Profile'}"
+              class="d-flex flex-column align-items-center mb-4">
                 <p class="user-name">{{ user.name}}</p>
                 <img class="img-fluid rounded--image" :src="user.avatar" :alt="user.username">
               </router-link>
-              <small class="text-muted d-block">{{ userPostsCount }} posts</small>
+              <p class="text-center">{{ userPostsCount }} posts</p>
           </div>
       </div>
 
@@ -36,7 +37,9 @@
           <div class="d-flex justify-content-end">
             <button class="btn btn-md"><span class="emoji">❤️</span>️ 3</button>
             <button class="btn btn-md active-reaction"><span class="emoji">👌️</span>️ 1</button>
-            <button class="btn btn-md">+ <i class="fa fa-smile-o emoji"></i></button>
+            <button class="btn btn-md">+
+              <font-awesome-icon :icon="['far', 'face-smile']" />
+            </button>
           </div>
         </div>
       </div>
