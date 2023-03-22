@@ -1,53 +1,75 @@
 <template>
-  <div class="col-12 col-md-4">
-    <div class="profile-card">
-
-        <p class="text-center">
-            <img :src="user.avatar" :alt="user.name" class="avatar-xlarge img-update">
-        </p>
-
-        <div class="form-group">
-            <input v-model="activeUser.username" type="text" placeholder="Username" class="form-input text-lead text-bold">
+  <div class="col-12 col-lg-4">
+    <div class="profile-card mb-6 shadow-sm p-8 bg-light text-center">
+      <img :src="user.avatar"  :alt="user.name" class="img-fluid mb-4">
+      <form>
+        <div class="mb-4 row">
+          <div class="col-3 text-start">
+            <label for="username" class="col-form-label" aria-describedby="username"> Username </label>
+          </div>
+          <div class="col-9">
+            <input v-model="activeUser.username" type="text" id="username" placeholder="Username" class="form-control">
+          </div>
         </div>
 
-        <div class="form-group">
-            <input v-model="activeUser.name" type="text" placeholder="Full Name" class="form-input text-lead">
+        <div class="mb-4 row">
+          <div class="col-3 text-start">
+            <label for="name" class="col-form-label" aria-describedby="name"> name </label>
+          </div>
+          <div class="col-9">
+            <input v-model="activeUser.name" type="text" id="name" placeholder="Full Name" class="form-control">
+          </div>
         </div>
 
-        <div class="form-group">
-            <label for="user_bio">Bio</label>
-            <textarea v-model="activeUser.bio" class="form-input" id="user_bio" placeholder="Write a few words about yourself."></textarea>
+        <div class="mb-4 row">
+          <div class="col-3 text-start">
+            <label for="user_bio" class="col-form-label" aria-describedby="bio">About</label>
+          </div>
+          <div class="col-9">
+            <textarea v-model="activeUser.bio" id="user_bio" placeholder="Write a few words about yourself." class="form-control" aria-label="biography"></textarea>
+          </div>
         </div>
 
-        <div class="stats">
-            <span>{{ userPostsCount }} posts</span>
-            <span>{{ userThreadsCount }} threads</span>
+        <div class="mb-4 row">
+          <div class="col-3 text-start">
+            <label for="user_website" class="col-form-label" aria-describedby="website">Website</label>
+          </div>
+          <div class="col-9">
+            <input v-model="activeUser.website" autocomplete="off" type="url" class="form-control" id="user_website" aria-label="website">
+          </div>
         </div>
 
-        <hr>
-
-        <div class="form-group">
-            <label class="form-label" for="user_website">Website</label>
-            <input v-model="activeUser.website" autocomplete="off" class="form-input" id="user_website">
+        <div class="mb-4 row">
+          <div class="col-3 text-start">
+            <label class="col-form-label" for="user_email" aria-describedby="email">Email</label>
+          </div>
+          <div class="col-9">
+            <input v-model="activeUser.email" autocomplete="off" type="email" class="form-control" id="user_email">
+          </div>
         </div>
 
-        <div class="form-group">
-            <label class="form-label" for="user_email">Email</label>
-            <input v-model="activeUser.email" autocomplete="off" class="form-input" id="user_email">
+        <div class="mb-4 row">
+          <div class="col-3 text-start">
+            <label class="col-form-label" for="user_location" aria-describedby="location">Location</label>
+          </div>
+          <div class="col-9">
+            <input v-model="activeUser.location" autocomplete="off" type="text" id="user_location" class="form-control">
+          </div>
         </div>
 
-        <div class="form-group">
-            <label class="form-label" for="user_location">Location</label>
-            <input v-model="activeUser.location" autocomplete="off" class="form-input" id="user_location">
+        <div class="actions d-flex justify-content-end">
+            <button @click.prevent="cancel" class="btn btn-secondary me-2">Cancel</button>
+            <button @click.prevent="save" type="submit" class="btn btn-primary">Save</button>
         </div>
-
-        <div class="btn-group space-between">
-            <button @click.prevent="cancel" class="btn-ghost">Cancel</button>
-            <button @click.prevent="save" type="submit" class="btn-blue">Save</button>
-        </div>
+      </form>
     </div>
+    <div class="stats d-flex justify-content-around">
+      <span class="h4">{{ userPostsCount }} posts </span>
+      <span class="h4">{{ userThreadsCount }} threads</span>
+    </div>
+    <hr>
 
-    <p class="text-xsmall text-faded text-center">Member since june 2003, last visited 4 hours ago</p>
+    <p>Member since june 2003, last visited 4 hours ago</p>
   </div>
 </template>
 

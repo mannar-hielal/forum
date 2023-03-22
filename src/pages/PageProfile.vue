@@ -15,7 +15,7 @@
       :userThreadsCount="userThreadsCount"
     />
     <!--right side: posts-->
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-lg-8">
         <header class="profile-header d-flex flex-column flex-md-row justify-content-between align-items-center">
             <h1 class="h3 mb-0">
                 {{ user.username }}'s recent activity
