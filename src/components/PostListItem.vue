@@ -27,7 +27,7 @@
         />
       </div>
 
-      <div class="col-6 reactions">
+      <!-- <div class="col-6 reactions">
         <div>
           <ul class="d-flex justify-content-end mb-2">
             <li>💡</li>
@@ -44,7 +44,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
