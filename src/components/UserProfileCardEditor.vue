@@ -14,7 +14,7 @@
 
         <div class="mb-4 row">
           <div class="col-3 text-start">
-            <label for="name" class="col-form-label" aria-describedby="name"> name </label>
+            <label for="name" class="col-form-label" aria-describedby="name"> Name </label>
           </div>
           <div class="col-9">
             <input v-model="activeUser.name" type="text" id="name" placeholder="Full Name" class="form-control">
