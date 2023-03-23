@@ -13,7 +13,7 @@
         </div>
 
         <div class="actions d-flex justify-content-end">
-            <!-- <button @click.prevent="cancel" class="btn btn-secondary me-2">Cancel</button> -->
+            <button @click.prevent="cancel" class="btn btn-secondary me-2">Cancel</button>
             <button @click.prevent="save" type="submit" class="btn btn-primary">Publish</button>
         </div>
     </form>
@@ -35,13 +35,16 @@ export default {
     }
   },
   methods: {
-    // dispatch publish action
+    // we make creatThread promisified because we want it to return the created thread
     save () {
       this.$store.dispatch('createThread', {
         forumId: this.forum['.key'],
         title: this.title,
         text: this.text
-      })
+      }).then(thread => this.$router.push({ name: 'ThreadShow', params: { id: thread['.key'] } }))
+    },
+    cancel () {
+      this.$router.push({ name: 'Forum', params: { id: this.forum['.key'] } })
     }
   }
 }
