@@ -6,7 +6,13 @@
           <p>{{ forum.description }}</p>
         </header>
         <div class="d-flex justify-content-end mb-4">
-          <a href="new-thread.html" class="btn btn-primary">Start a thread</a>
+          <router-link
+            :to="{
+              name: 'ThreadCreate',
+              params: { forum: this.forum }}"
+              class="btn btn-primary">
+              Start a thread
+          </router-link>
         </div>
 
         <!-- Iterating through the collection of threads of this forum-->

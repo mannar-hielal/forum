@@ -35,10 +35,11 @@ export default new Vuex.Store({
         publishedAt,
         userId
       }
-      dispatch('createPost', { text, threadId })
+      // create the thread first, only then add a post to it
       commit('setThread', { thread, threadId })
       commit('appendThreadToForum', { forumId, threadId })
       commit('appendThreadToUser', { threadId, userId })
+      dispatch('createPost', { text, threadId })
     },
     updateUser ({ commit }, user) {
       commit('setUser', { userId: user['.key'], user })

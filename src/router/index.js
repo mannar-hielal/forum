@@ -5,6 +5,7 @@ import Category from '@/pages/PageCategory.vue'
 import Forum from '@/pages/PageForum.vue'
 import Profile from '@/pages/PageProfile.vue'
 import ThreadShow from '@/pages/PageThreadShow.vue'
+import ThreadCreate from '@/pages/PageThreadCreate.vue'
 import NotFound from '@/pages/PageNotFound'
 
 Vue.use(VueRouter)
@@ -14,6 +15,12 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/thread/create',
+    name: 'ThreadCreate',
+    component: ThreadCreate,
+    props: true
   },
   {
     path: '/thread/:id',

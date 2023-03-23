@@ -2,12 +2,12 @@
   <div>
     <h1>Create new thread in {{ forum.name }}</h1>
     <form>
-        <div>
+        <div class="mb-4">
           <label for="thread_title">Title:</label>
           <input v-model="title" type="text" id="thread_title" class="form-control" name="title">
         </div>
 
-        <div>
+        <div class="mb-4">
           <label for="thread_content">Content:</label>
           <textarea v-model="text" id="thread_content" class="form-control" name="content" rows="8" cols="140"></textarea>
         </div>
@@ -21,23 +21,25 @@
 </template>
 <script>
 export default {
-  name: 'PageThreadCreate',
-  props: {
-    forum: {
-      required: true,
-      type: Object
-    },
-    data: {
+  name: 'ThreadCreate',
+  data () {
+    return {
       title: '',
       text: ''
     }
   },
+  props: {
+    forum: {
+      required: true,
+      type: Object
+    }
+  },
   methods: {
     // dispatch publish action
-    save() {
+    save () {
       this.$store.dispatch('createThread', {
         forumId: this.forum['.key'],
-        title :this.title,
+        title: this.title,
         text: this.text
       })
     }
