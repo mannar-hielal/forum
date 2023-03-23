@@ -48,6 +48,19 @@ Because with Vue CLI:</br>
 Which maps every route (URL) to a component/view. It allows us:
 - Navigate without refreshing the page, by fetching only the needed data.
 - Code splitting: where only the script of the visited page is downloaded (i.e: the about page's script is extracted to its own bundle and loaded conditionally), thus improving speed of page load.</br></br>
+
+### Vuex (the state management for Vue.js)
+I wanted to store all forums, threads, users, posts data in one place and manipulate those data (state) using actions and mutations in one place, thus decoupling the data manipulation logic from the components. All the component could do is tell vuex on when to change the data. </br></br>
+Example: in <code>PageThreadCreate.vue</code> the publish button triggers <code>save()</code> which tells vuex to creates a new thread inside a forum, then it redirect user to the newly created thread
+```
+   save () {
+      this.$store.dispatch('createThread', {
+        forumId: this.forum['.key'],
+        title: this.title,
+        text: this.text
+      }).then(thread => this.$router.push({ name: 'ThreadShow', params: { id: thread['.key'] } }))
+    },
+```
 ## Project setup
 ```
 npm install
