@@ -6,7 +6,7 @@
             <router-link
               :to="{name: 'Profile'}"
               class="d-flex flex-column align-items-center mb-4">
-                <p class="user-name">{{ user.name}}</p>
+                <p class="user-name">{{ user.username}}</p>
                 <div class="rounded--image">
                   <img class="img-fluid" :src="user.avatar" :alt="user.username">
                 </div>
@@ -54,9 +54,7 @@ import { countObjectProperties } from '@/helpers'
 export default {
   name: 'PostListItem',
   data () {
-    return {
-      users: this.$store.state.users
-    }
+    return {}
   },
   props: {
     post: {
@@ -66,7 +64,7 @@ export default {
   },
   computed: {
     user () {
-      return this.users[this.post.userId]
+      return this.$store.state.users[this.post.userId]
     },
     userPostsCount () {
       return countObjectProperties(this.user.posts)

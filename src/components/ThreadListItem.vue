@@ -41,9 +41,7 @@ import { countObjectProperties } from '@/helpers/index'
 export default {
   name: 'ThreadListItem',
   data () {
-    return {
-      users: this.$store.state.users
-    }
+    return {}
   },
   props: {
     thread: {
@@ -56,7 +54,7 @@ export default {
       return countObjectProperties(this.thread.posts) - 1
     },
     user () {
-      return this.users[this.thread.userId]
+      return this.$store.state.users[this.thread.userId]
     }
   }
 }
