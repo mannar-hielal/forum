@@ -29,9 +29,14 @@ export default {
     }
   },
   props: {
-    forum: {
+    forumId: {
       required: true,
-      type: Object
+      type: String
+    }
+  },
+  computed: {
+    forum () {
+      return this.$store.state.forums[this.forumId]
     }
   },
   methods: {
