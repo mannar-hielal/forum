@@ -2,7 +2,14 @@
         <!-- Showing one thread -->
         <div>
           <header class="mb-12">
-            <h1>{{ thread.title }}</h1>
+            <div class="d-flex justify-content-between mb-2">
+              <h1>{{ thread.title }}</h1>
+              <router-link
+              class="btn btn-primary"
+              :to="{ name: 'ThreadEdit', params: {id: thread['.key']}}"
+              tag="button"
+              >Edit Thread</router-link>
+            </div>
             <div class="d-flex justify-content-between">
               <small>
                   By <a href="#" class="text-muted">{{ user.name }}</a>,
