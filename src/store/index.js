@@ -23,6 +23,8 @@ export default new Vuex.Store({
       commit('setPost', { post, postId })
       commit('appendPostToThreads', { threadId: post.threadId, postId })
       commit('appendPostToUser', { postId, userId: post.userId })
+      // we need to promisifie it to return the post, to use it to make it the first post in a newly created thread
+      return Promise.resolve(state.posts[postId])
     },
     createThread ({ commit, state, dispatch }, { title, text, forumId }) {
       return new Promise((resolve, reject) => {
@@ -40,7 +42,9 @@ export default new Vuex.Store({
         commit('setThread', { thread, threadId })
         commit('appendThreadToForum', { forumId, threadId })
         commit('appendThreadToUser', { threadId, userId })
-        dispatch('createPost', { text, threadId })
+        dispatch('createPost', { text, threadId }).then(post => {
+          commit('setThread', { thread: { ...thread, firstPostId: post['.key'] }, threadId })
+        })
         resolve(state.threads[threadId])
       })
     },
