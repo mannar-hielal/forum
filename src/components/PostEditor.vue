@@ -15,22 +15,40 @@ export default {
   name: 'PostEditor',
   data () {
     return {
-      postText: ''
+      postText: this.post ? this.post.text : ''
     }
   },
   props: {
     threadId: {
-      required: true
+      required: false
+    },
+    post: {
+      type: Object
+    }
+  },
+  computed: {
+    isUpdate () {
+      return !!this.post
     }
   },
   methods: {
     save () {
+      return this.isUpdate ? this.update() : this.create()
+    },
+    create () {
       const post = {
         text: this.postText,
         threadId: this.threadId
       }
       this.postText = ''
-      this.$store.dispatch('createPost', post)
+      this.$store.dispatch('createPost', post).then(post => this.$emit('save', post))
+    },
+    update () {
+      const payload = {
+        id: this.post['.key'],
+        text: this.postText
+      }
+      this.$store.dispatch('updatePost', payload).then(post => this.$emit('save', post))
     }
   }
 }

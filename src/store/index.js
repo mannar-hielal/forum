@@ -26,6 +26,13 @@ export default new Vuex.Store({
       // we need to promisifie it to return the post, to use it to make it the first post in a newly created thread
       return Promise.resolve(state.posts[postId])
     },
+    updatePost ({ commit, state }, { id, text }) {
+      return new Promise((resolve, reject) => {
+        const post = state.posts[id]
+        commit('setPost', { post: { ...post, text }, postId: id })
+        resolve(post)
+      })
+    },
     createThread ({ commit, state, dispatch }, { title, text, forumId }) {
       return new Promise((resolve, reject) => {
         const threadId = `newthread${Math.random()}`

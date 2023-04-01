@@ -16,7 +16,22 @@
       </div>
 
       <div class="post-content col-8 col-md-10">
-          <p>{{post.text }}</p>
+          <div v-if="!editing"
+          class="d-flex justify-content-between align-items-start">
+            <p>{{post.text }}</p>
+            <a href="#"
+            title="Make a change"
+            @click.prevent="editing = true">
+              <font-awesome-icon :icon="['fas', 'pencil']" />
+            </a>
+          </div>
+
+          <div v-else>
+            <PostEditor
+            :post="post"
+            @save="editing = false"
+            />
+          </div>
       </div>
     </div>
 
@@ -51,10 +66,17 @@
 
 <script>
 import { countObjectProperties } from '@/helpers'
+import PostEditor from '@/components/PostEditor'
+
 export default {
   name: 'PostListItem',
+  components: {
+    PostEditor
+  },
   data () {
-    return {}
+    return {
+      editing: false
+    }
   },
   props: {
     post: {
