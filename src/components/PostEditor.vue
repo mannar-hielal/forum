@@ -26,7 +26,15 @@ export default {
       required: false
     },
     post: {
-      type: Object
+      type: Object,
+      validator: obj => {
+        const keyIsValid = typeof obj['.key'] === 'string'
+        const textIsValid = typeof obj.text === 'string'
+        const valid = textIsValid && keyIsValid
+        if (!keyIsValid) { console.error("the post object must include '.key'") }
+        if (!textIsValid) { console.error("the post object must include '.text'") }
+        return valid
+      }
     }
   },
   computed: {
