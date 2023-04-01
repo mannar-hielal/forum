@@ -6,7 +6,10 @@
         <textarea class="form-control" id="post_text" rows="3" v-model="postText">
       </textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="d-flex justify-content-end">
+        <button v-if="isUpdate" @click.prevent="cancel" class="btn btn-secondary me-2">Cancel</button>
+        <button type="submit" class="btn btn-primary">{{ isUpdate? 'Update': 'Submit' }}</button>
+      </div>
     </form>
   </div>
 </template>
@@ -49,6 +52,9 @@ export default {
         text: this.postText
       }
       this.$store.dispatch('updatePost', payload).then(post => this.$emit('save', post))
+    },
+    cancel () {
+      this.$emit('cancel')
     }
   }
 }
