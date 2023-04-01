@@ -20,6 +20,8 @@
           </header>
           <!-- Iterating through the posts of this specific thread-->
           <PostList :posts="posts"/>
+
+          <!-- Display an editor to add posts-->
           <PostEditor
           :threadId= id
           />
