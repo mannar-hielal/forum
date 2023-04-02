@@ -1,7 +1,7 @@
 <template>
   <div class="post mb-6 shadow-sm p-8 bg-light">
     <div class="row">
-      <div class="user-info col-4 col-md-2">
+      <div class="user-info col-md-2">
           <div>
             <router-link
               :to="{name: 'Profile'}"
@@ -15,7 +15,7 @@
           </div>
       </div>
 
-      <div class="post-content col-8 col-md-10">
+      <div class="post-content col-md-10">
           <div v-if="!editing"
           class="d-flex justify-content-between align-items-start">
             <p>{{post.text }}</p>
@@ -37,7 +37,8 @@
     </div>
 
     <div class="row align-items-end">
-      <div class="col-6 post-date text-faded">
+      <div class="col-12 post-date text-faded text-end">
+        <p v-if="post.edited" class="text-muted">edited</p>
         <AppDate
         :timestamp="post.publishedAt"
         />
