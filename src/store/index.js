@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import sourceDate from '@/data.json'
+import { countObjectProperties } from '@/helpers'
 
 Vue.use(Vuex)
 
@@ -12,7 +13,10 @@ export default new Vuex.Store({
   getters: {
     authUser (state) {
       return state.users[state.authUserId]
-    }
+    },
+    // You can pass arguments to getters by returning a function (closure)
+    userPostsCount: state => id => countObjectProperties(state.users[id].posts),
+    userThreadsCount: state => id => countObjectProperties(state.users[id].threads)
   },
   actions: {
     createPost ({ commit, state }, post) {
