@@ -15,7 +15,7 @@
                   <AppDate
                   :timestamp="thread.publishedAt"/>
               </small>
-              <span>3 replies by 3 contributors</span>
+              <span>{{ repliesCount }} replies by 3 contributors</span>
             </div>
           </header>
           <!-- Iterating through the posts of this specific thread-->
@@ -57,6 +57,9 @@ export default {
     },
     thread () {
       return this.$store.state.threads[this.id]
+    },
+    repliesCount () {
+      return this.$store.getters.threadRepliesCount(this.thread['.key'])
     }
   }
 }

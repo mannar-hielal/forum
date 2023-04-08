@@ -16,7 +16,8 @@ export default new Vuex.Store({
     },
     // You can pass arguments to getters by returning a function (closure)
     userPostsCount: state => id => countObjectProperties(state.users[id].posts),
-    userThreadsCount: state => id => countObjectProperties(state.users[id].threads)
+    userThreadsCount: state => id => countObjectProperties(state.users[id].threads),
+    threadRepliesCount: state => id => countObjectProperties(state.threads[id].posts) - 1
   },
   actions: {
     createPost ({ commit, state }, post) {
