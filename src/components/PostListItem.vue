@@ -11,7 +11,8 @@
                   <img class="img-fluid" :src="user.avatar" :alt="user.username">
                 </div>
               </router-link>
-              <p class="text-center">{{ userPostsCount }} posts</p>
+              <p class="text-center m-0">{{ userThreadsCount }} threads</p>
+              <p class="text-center m-0">{{ userPostsCount }} posts</p>
           </div>
       </div>
 
@@ -91,6 +92,9 @@ export default {
     },
     userPostsCount () {
       return this.$store.getters.userPostsCount(this.post.userId)
+    },
+    userThreadsCount () {
+      return this.$store.getters.userThreadsCount(this.post.userId)
     }
   }
 }
