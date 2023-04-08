@@ -15,7 +15,7 @@
                   <AppDate
                   :timestamp="thread.publishedAt"/>
               </small>
-              <span>{{ repliesCount }} replies by 3 contributors</span>
+              <span>{{ repliesCount }} replies by {{ contributersCount }} contributors</span>
             </div>
           </header>
           <!-- Iterating through the posts of this specific thread-->
@@ -60,6 +60,16 @@ export default {
     },
     repliesCount () {
       return this.$store.getters.threadRepliesCount(this.thread['.key'])
+    },
+    contributersCount () {
+      // find the replies : those are posts excluding the firstPost
+      const replies = Object.keys(this.thread.posts).filter(postId => postId !== this.thread.firstPostId).map(postId => this.$store.state.posts[postId])
+
+      // get the user ids
+      const userIds = replies.map(post => post.userId)
+
+      // count the unique ids
+      return userIds.filter((item, index) => index === userIds.indexOf(item)).length
     }
   }
 }
